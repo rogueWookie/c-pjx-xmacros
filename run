@@ -1,0 +1,4 @@
+#!/bin/bash
+echo -e "\n\nrunning ./bld/main...\n"
+./bld/main
+echo -e "\n"
