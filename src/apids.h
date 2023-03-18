@@ -23,14 +23,16 @@
 
 
 #define APIDS_FOR_EACH_APID(DO) \
-    DO(APID_ASDF_01,=1)         \
+    DO(APID_ASDF_00,)           \
+    DO(APID_ASDF_01,)           \
     DO(APID_ASDF_02,)           \
-    DO(APID_FDSA_03,)           \
-    DO(APID_FDSA_04,)           \
-    DO(APID_ABCD_08,=8)         \
-    DO(APID_ABCD_09,)           \
-    DO(APID_ABCD_10,)
+    DO(APID_ASDF_03,)           \
+    DO(APID_ASDF_04,)           \
+    DO(APID_ASDF_05,)           \
+    DO(APID_ASDF_06,)
 
+#define APIDS_FOR_EACH_ENUM(DO) \
+    APIDS_FOR_EACH_APID(DO) DO(APIDS_MAX_NUM,)
 
 #define APIDS_CREATE_ENUMS(apid, apid_value, ...) \
     apid apid_value,
@@ -50,8 +52,7 @@
 
 typedef enum 
 {
-    APIDS_FOR_EACH_APID(APIDS_CREATE_ENUMS) 
-    APIDS_MAX_NUM=7 
+    APIDS_FOR_EACH_ENUM(APIDS_CREATE_ENUMS)
 } APID_e;
 
 

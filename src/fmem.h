@@ -39,6 +39,9 @@
     DO(ADDR9,)
 
 
+#define FMEM_FOR_EACH_ENUM(DO) FMEM_FOR_EACH_ADDR(DO) DO(ADDRS,)
+
+
 #define FMEM_CREATE_ENUM(addr, addr_value, ...) \
     addr addr_value,
 
@@ -72,8 +75,7 @@
 
 typedef enum 
 { 
-    FMEM_FOR_EACH_ADDR(FMEM_CREATE_ENUM) 
-    ADDRS 
+    FMEM_FOR_EACH_ENUM(FMEM_CREATE_ENUM) 
 } fmem_addr_t;
 
 

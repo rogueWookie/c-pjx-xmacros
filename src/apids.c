@@ -26,6 +26,6 @@ const char * apids_enum_to_str ( APID_e apid )
 
 void apid_test ()
 {
-    APIDS_FOR_EACH_APID(APIDS_PRINT_ENUMS)
+    APIDS_FOR_EACH_ENUM(APIDS_PRINT_ENUMS)
     APIDS_FOR_EACH_APID(APIDS_TEST_ENUM_TO_STR)
 }
